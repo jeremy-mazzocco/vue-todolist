@@ -20,7 +20,7 @@
         </div>
         <div class="container-tasks">
             <ul>
-                <li v-for="element in tasks">
+                <li v-for="element in tasks" :class="classLabel">
                     {{ element.text }}
 
                 </li>
