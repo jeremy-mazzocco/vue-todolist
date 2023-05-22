@@ -17,13 +17,10 @@ createApp({
                     text: this.newTask,
                 }
             );
-
             this.displayToggle = 'xmark-show';
-
             if (this.done === true) {
                 this.doneLabel = 'label';
             }
-
         },
 
         rimuoviTask(indice) {
