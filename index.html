@@ -20,9 +20,9 @@
         </div>
         <div class="container-tasks">
             <ul>
-                <li v-for="element in tasks" :class="classLabel">
-                    {{ element.text }}
-
+                <li v-for="(task, idx) in tasks" :class="doneLabel">
+                    {{ task.text }}
+                    <i @click="rimuoviTask(idx)" class="fa-regular fa-circle-xmark" :class="displayToggle"></i>
                 </li>
             </ul>
 

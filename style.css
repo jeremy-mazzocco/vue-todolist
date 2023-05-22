@@ -7,3 +7,11 @@
 .label {
     text-decoration: line-through;
 }
+
+.xmark-none {
+    display: none;
+}
+
+.xmark-show {
+    display: inline;
+}

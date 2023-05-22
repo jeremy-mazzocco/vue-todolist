@@ -6,7 +6,8 @@ createApp({
             newTask: '',
             tasks: [],
             done: false,
-            classLabel: ''
+            doneLabel: '',
+            displayToggle: 'xmark-none'
         }
     },
     methods: {
@@ -17,10 +18,16 @@ createApp({
                 }
             );
 
+            this.displayToggle = 'xmark-show';
+
             if (this.done === true) {
-                this.classLabel = 'label';
+                this.doneLabel = 'label';
             }
 
+        },
+
+        rimuoviTask(indice) {
+            this.tasks.splice(indice, 1)
         }
     }
 }).mount('#app')
