@@ -14,20 +14,24 @@
 
 <body>
     <main id="app">
+
+
         <div class="container-aggiungi">
             <input v-model="newTask" type="text" placeholder="Aggiungi la Nuova Task" @keyup.enter="aggiungiTask">
-            <button @click="aggiungiTask">Aggiungi</button>
+            <button @click="aggiungiTask()">Aggiungi</button>
         </div>
+
 
         <div class="container-tasks">
             <ul>
-                <li v-for="(task, idx) in tasks" :class="doneLabel">
+                <li v-for="(task, idx) in tasks" @click="barraTask(idx)" :class="doneLabel">
                     {{ task.text }}
-                    <i @click="rimuoviTask(idx)" class="fa-regular fa-circle-xmark" :class="displayToggle"></i>
+                    <i @click="rimuoviTask(idx)" class="fa-regular fa-circle-xmark" :class="displayCross"></i>
                 </li>
             </ul>
-        </div>
 
+
+        </div>
 
     </main>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
