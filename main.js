@@ -6,7 +6,6 @@ createApp({
             newTask: '',
             tasks: [],
             displayCross: 'xmark-none',
-            doneLabel: '',
         }
     },
     methods: {
@@ -18,7 +17,7 @@ createApp({
                 }
             );
             this.displayCross = 'xmark-show';
-
+            this.newTask = '';
         },
 
         rimuoviTask(indice) {
@@ -27,17 +26,12 @@ createApp({
 
         barraTask(indice) {
             if (this.tasks[indice].done === false) {
-                this.doneLabel = 'line-erase';
                 this.tasks[indice].done = true;
-                console.log(this.doneLabel);
-            } else if (this.tasks[indice].done === true) {
-                this.doneLabel = '';
+
+            } else {
                 this.tasks[indice].done = false
-                console.log(this.doneLabel);
             }
-
         }
-
     }
 }).mount('#app')
 
